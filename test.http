@@ -3,4 +3,41 @@
 @host=http://localhost:{{port}}
 
 ### GET /
+GET {{host}}/
+
+### GET /employees
 GET {{host}}/employees
+
+### GET /id:
+GET {{host}}/employees/4
+
+
+### GET nonexistent /id:
+GET {{host}}/employees/20
+
+### POST new employee 
+POST {{host}}/employees
+Content-Type: application/json
+
+{
+  "name": "Ricky"
+}
+
+### Update book
+PUT {{host}}/employees/3
+Content-Type: application/json
+
+{
+  "name": "Updated Employee"
+}
+
+### delete an employee
+DELETE {{host}}/employees/2
+
+### Incorrectly a new book
+PUT {{host}}/employees/3
+Content-Type: application/json
+
+{
+  "nam": "Wrong New Book"
+}
